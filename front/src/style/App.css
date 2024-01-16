@@ -45,6 +45,7 @@ button {
 button:hover {
   background-color: #2980b9;
 }
+
 .modal-content {
   background: #fff;
   padding: 20px;
@@ -59,4 +60,42 @@ button:hover {
   cursor: pointer;
   font-size: 18px;
   color: #333;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board-item {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.board-item h3 {
+  margin-top: 0;
+}
+
+.board-item p {
+  margin-bottom: 10px;
+}
+
+.board-item button {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.board-item button:hover {
+  background-color: #c0392b;
 }

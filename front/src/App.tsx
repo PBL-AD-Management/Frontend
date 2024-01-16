@@ -1,9 +1,10 @@
 // App.tsx
 
 import React, { useState } from 'react';
-import './App.css';
+import './style/App.css';
 
 interface Ad {
+  id: number;
   title: string;
   description: string;
 }
@@ -11,6 +12,7 @@ interface Ad {
 const App: React.FC = () => {
   const [ads, setAds] = useState<Ad[]>([]);
   const [ad, setAd] = useState<Ad>({
+    id: 1,
     title: '',
     description: '',
   });
@@ -25,9 +27,13 @@ const App: React.FC = () => {
   };
 
   const handleAddAd = () => {
-    setAds((prevAds) => [...prevAds, ad]);
-    setAd({ title: '', description: '' });
+    setAds((prevAds) => [...prevAds, { ...ad, id: Date.now() }]);
+    setAd({ id: Date.now(), title: '', description: '' });
     setModalOpen(false);
+  };
+
+  const handleDeleteAd = (id: number) => {
+    setAds((prevAds) => prevAds.filter((ad) => ad.id !== id));
   };
 
   const openModal = () => {
@@ -74,12 +80,13 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <div>
-        {/* 여기에 광고 목록을 보여주는 코드 추가 */}
-        {ads.map((ad, index) => (
-          <div key={index}>
+      <div className="board">
+        {/* 광고 목록을 보여주는 코드 */}
+        {ads.map((ad) => (
+          <div className="board-item" key={ad.id}>
             <h3>{ad.title}</h3>
             <p>{ad.description}</p>
+            <button onClick={() => handleDeleteAd(ad.id)}>삭제</button>
           </div>
         ))}
       </div>
