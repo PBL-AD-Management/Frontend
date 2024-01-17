@@ -1,3 +1,127 @@
-<html>
-<div>hello world</div>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 7</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+    <script src="/script/script.js"></script>
+</head>
+
+<body>
+<!-- 레이어 팝업 ADD-->
+<div id="popupContainer" class="popup-container">
+    <div class="popup">
+        <div>Title: <input id="addTitle" /></div>
+        <div>Text: <input id="addText" /></div>
+        <div>
+            <button id="closePopup" type="button" onclick="closePopup()">닫기</button>
+            <button id="confirmAdd" type="button" onclick="confirmAdd()">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 제목 -->
+<h2 class=mainTitle>AD Manager Platform - AD List</h2>
+<div class=levelBox>
+    <div class="buttonLevel">
+        <button id=ADDButton type="button" onclick="clickADDButton()">ADD</button>
+        <span></span>
+        <button id=ADTestButton>AD Test</button>
+    </div>
+    <div class="searchLevel">
+        <select id="searchSelect">
+            <option>title</option>
+            <option>text</option>
+        </select>
+        <input id="searchInput" type="text" value="여기에 쓰세요" />
+        <button type="button">검색</button>
+    </div>
+    <!-- 테이블 -->
+    <div class="tableLevel">
+        <table id="ADTable">
+            <thead>
+            <tr>
+                <td>idx</td>
+                <td>title</td>
+                <td>text</td>
+                <td>Exposure datetime</td>
+                <td>count</td>
+                <td>regdate</td>
+                <td>action</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="tableRow1">
+                <td id="idx1">1</td>
+                <td id="title1">제목</td>
+                <td id="text1">설명</td>
+                <td id="EDT1">노출경과시간</td>
+                <td id="count1">1001</td>
+                <td id="regdate1">0000-00-00</td>
+                <td id="action1">
+                    <button type="button">상세</button>
+                    <button type="button">수정</button>
+                    <button type="button">삭제</button>
+                </td>
+            </tr>
+            <tr id="tableRow2">
+                <td id="idx2"></td>
+                <td id="title2"></td>
+                <td id="text2"></td>
+                <td id="EDT2"></td>
+                <td id="count2"></td>
+                <td id="regdate2"></td>
+                <td id="action2">
+                    <button type="button">상세</button>
+                    <button type="button">수정</button>
+                    <button type="button">삭제</button>
+                </td>
+            </tr>
+            <tr id="tableRow3">
+                <td id="idx3"></td>
+                <td id="title3"></td>
+                <td id="text3"></td>
+                <td id="EDT3"></td>
+                <td id="count3"></td>
+                <td id="regdate3"></td>
+                <td id="action3">
+                    <button type="button">상세</button>
+                    <button type="button">수정</button>
+                    <button type="button">삭제</button>
+                </td>
+            </tr>
+            <tr id="tableRow4">
+                <td id="idx4"></td>
+                <td id="title4"></td>
+                <td id="text4"></td>
+                <td id="EDT4"></td>
+                <td id="count4"></td>
+                <td id="regdate4"></td>
+                <td id="action4">
+                    <button type="button">상세</button>
+                    <button type="button">수정</button>
+                    <button type="button">삭제</button>
+                </td>
+            </tr>
+            <tr id="tableRow5">
+                <td id="idx5"></td>
+                <td id="title5"></td>
+                <td id="text5"></td>
+                <td id="EDT5"></td>
+                <td id="count5"></td>
+                <td id="regdate5"></td>
+                <td id="action5">
+                    <button type="button">상세</button>
+                    <button type="button">수정</button>
+                    <button type="button">삭제</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
 </html>

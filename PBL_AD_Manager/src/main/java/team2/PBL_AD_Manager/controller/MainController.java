@@ -12,4 +12,8 @@ public class MainController {
     public String start(){
         return "main";
     }
+
+    @GetMapping("/main.do")
+    public String maindo(){
+    return "main";}
 }
